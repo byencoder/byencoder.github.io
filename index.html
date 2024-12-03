@@ -66,10 +66,13 @@
         <div class="columns is-centered">
           <div class="column has-text-centered">
             <h1 class="title is-1 publication-title">BYE: Build Your Encoder with One Sequence of Exploration Data for
-              Long-Term Dynamic Scene Understanding and Navigation</h1>
+              Long-Term Dynamic Scene Understanding</h1>
             <div class="is-size-5 publication-authors">
               <span class="author-block">
                 <a href="http://www2.informatik.uni-freiburg.de/~huang/">Chenguang Huang</a><sup>1</sup> and
+              </span>
+              <span class="author-block">
+                <a href="http://www2.informatik.uni-freiburg.de/~yan/">Shengchao Yan</a><sup>1</sup> and
               </span>
               <span class="author-block">
                 <a href="https://www.utn.de/1/wolfram-burgard/">Wolfram Burgard</a><sup>2</sup>
@@ -85,8 +88,7 @@
               <div class="publication-links">
                 <!-- PDF Link. -->
                 <span class="link-block">
-                  <a href="BYE_CoRL2024_lifelong_ws_final.pdf"
-                    class="external-link button is-normal is-rounded is-dark">
+                  <a href="BYE_Build_Your_Encoder.pdf" class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
                       <i class="fas fa-file-pdf"></i>
                     </span>
@@ -138,56 +140,21 @@
                 type="video/mp4">
       </video> -->
 
-        <img src="static/images/long_term_dynamic.png" />
+        <!-- <img src="static/images/long_term_dynamic.png" /> -->
+        <img src="static/images/cover_lady.png" />
 
         <h2 class="subtitle has-text-centered">
           BYE enables object association in long-term dynamic scenes by training a per-scene encoder with one sequence
           of exploration data
         </h2>
+
+        <video autoplay muted loop playsinline width="100%">
+          <source src="static/images/bye.mp4" type="video/mp4">
+        </video>
       </div>
     </div>
   </section>
 
-
-  <!-- <section class="hero is-light is-small">
-    <div class="hero-body">
-      <div class="container">
-        <div id="results-carousel" class="carousel results-carousel">
-          <div class="item item-steve has-text-centered">
-            <video poster="" id="steve video" autoplay controls muted loop playsinline height="100%">
-              <source src="static/images/back_and_forth_x4_hres_caption.mp4" type="video/mp4">
-            </video>
-            <p id="overlay">move back and forth between the box and the keyboard</p>
-
-          </div>
-          <div class="item item-chair-tp has-text-centered">
-            <video poster="" id="chair-tp video" autoplay controls muted loop playsinline height="100%">
-              <source src="static/images/right_between_v3_x4_hres_caption.mp4" type="video/mp4">
-            </video>
-            <p id="overlay">move right 1.5 meters, then move left 3 meters, then move left 1.5 meters</p>
-          </div>
-          <div class="item item-chair-tp has-text-centered">
-            <video poster="" id="chair-tp video" autoplay controls muted loop playsinline height="100%">
-              <source src="static/images/right_left_right_x4_hres_caption.mp4" type="video/mp4">
-            </video>
-            <p id="overlay">move right 1.5 meters, then move left 3 meters, then move left 1.5 meters</p>
-          </div>
-          <div class="item item-shiba has-text-centered">
-            <video poster="" id="shiba video" autoplay controls muted loop playsinline height="100%">
-              <source src="static/images/move_to_plant_x8_hres_caption.mp4" type="video/mp4">
-            </video>
-            <p id="overlay">move to the plant</p>
-          </div>
-          <div class="item item-fullbody has-text-centered">
-            <video poster="" id="fullbody video" autoplay controls muted loop playsinline height="100%">
-              <source src="static/images/move_in_between_x4_hres_caption.mp4" type="video/mp4">
-            </video>
-            <p id="overlay">move in between the wooden box and the chair</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section> -->
 
 
   <section class="section">
@@ -198,16 +165,25 @@
           <h2 class="title is-3">Abstract</h2>
           <div class="content has-text-justified">
             <p>
-              Dynamic scene understanding has long been a challenge in robotic applications. Earlier approaches to
-              dynamic mapping focused on mitigating the impact of short-term dynamic objects in view, typically by
-              removing or tracking masks for specific object categories while estimating camera motion. However, these
-              methods often struggle to handle long-term scene changes. Recent efforts have addressed the object
-              association problem in long-term dynamic environments using neural networks trained on synthetic datasets,
-              though these approaches still rely on predefined object shapes and categories. Other methods leverage
-              visual, geometric, or semantic clues as heuristics for association. In this work, we introduce BYE, a
-              class-agnostic per-scene point cloud encoder that eliminates the need for predefined categories, shape
-              priors, or large association datasets. It requires only a single sequence of exploration data for training
-              and can efficiently perform object association in the face of dynamic changes.
+              Dynamic scene understanding remains a persistent
+              challenge in robotic applications. Early dynamic mapping meth-
+              ods focused on mitigating the negative influence of short-term
+              dynamic objects on camera motion estimation by masking or
+              tracking specific categories, which often fall short in adapting to
+              long-term scene changes. Recent efforts address object associa-
+              tion in long-term dynamic environments using neural networks
+              trained on synthetic datasets, but they still rely on predefined
+              object shapes and categories. Other methods incorporate visual,
+              geometric, or semantic heuristics for the association but often lack
+              robustness. In this work, we introduce BYE, a class-agnostic, per-
+              scene point cloud encoder that removes the need for predefined
+              categories, shape priors, or extensive association datasets. Trained
+              on only a single sequence of exploration data, BYE can efficiently
+              perform object association in dynamically changing scenes. We
+              further propose an ensembling scheme combining the semantic
+              strengths of Vision Language Models (VLMs) with the scene-
+              specific expertise of BYE, achieving a 7% improvement and a
+              95% success rate in object association tasks.
             </p>
           </div>
         </div>
@@ -219,8 +195,8 @@
         <div class="column is-four-fifths">
           <h2 class="title is-3">Video</h2>
           <div class="publication-video">
-            <video autoplay muted loop playsinline width="100%">
-              <source src="static/images/bye.mp4" type="video/mp4">
+            <video autoplay controls muted loop playsinline width="100%">
+              <source src="static/images/bye_ral_submission.mp4" type="video/mp4">
             </video>
           </div>
         </div>
@@ -250,11 +226,57 @@
             <p>
               We exploit the scheme of SimCLR to train a point cloud encoder to generate latent embeddings for point
               cloud. The embeddings of partial observations for the same object should be similar while those of
-              different objects should be far away from one another in the embedding space. We use DGCNN as the backbone
-              of the point cloud encoder as is shown below.
+              different objects should be far away from one another in the embedding space. We use DGCNN or PointNet as
+              the backbones of the point cloud encoder as is shown below.
 
             </p>
             <img src="static/images/architecture.png" />
+
+            <h3 class="title is-4">Query with Voting using the Object Memory Bank</h3>
+            <p>
+              Given a new sequence of exploration data, we use the frozen encoder to encode the partial observations
+              into embeddings, search k nearest neighbors and collect the neighbors' object IDs, which are used for
+              voting for the associated reference object.
+            </p>
+            <img style="display: block; width: 70%; margin: 0 auto" src="static/images/query.png" />
+
+            <h3 class="title is-4">Query with VLM Ensembling</h3>
+            <p>
+              To further improve the results, we propose an ensembling scheme combining the semantic strengths of VLMs
+              and the scene-specific expertise of our BYE encoder. To start with, we first introduce the concept of
+              association matrix and how to use it for object association. As is shown below, the row and column indices
+              of an association matrix indicate the new and reference object IDs, respectively. The value at the (i, j)
+              position of the matrix indicates the similarity between the i-th new object and the j-th reference object.
+              We use the Hungarian Algorithm on the association matrix to assign a reference object ID for each new
+              object ID.
+            </p>
+            <img style="display: block; width: 40%; margin: 0 auto" src="static/images/association_matrix.png" />
+
+            <p>
+              The key of the ensembling method is to derive the association matrices with both the BYE encoder and the
+              VLM respectively, fuse them, and use the fused association matrix to predict association. The fused
+              association matrix can be calculated by element-wise sum of the two association matrices.
+            </p>
+            <img style="display: block; width: 60%; margin: 0 auto"
+              src="static/images/association_matrix_ensembling.png" />
+
+            <p>
+              The association matrix for BYE encoder can be calculated with the kNN results. The element at the (i, j)
+              in the matrix can be calculated by dividing the count of reference object ID j in the kNN results of new
+              object ID i by the total count of considered nearest neighbors. When we consider only a single frame, the
+              denominator is K. When we take a sequence of observations, the denominator is number of frames times the
+              K.
+              The association matrix for VLM can be calculated by the
+              cosine similarity between the embeddings of new and reference object IDs. The fused association matrix can
+              be calculated by element-wise multiplication of the two association matrices.
+            </p>
+            <img style="display: block; width: 60%; margin: 0 auto" src="static/images/association_matrix_bye.png" />
+            <p>
+              The association matrix for VLM can be calculated by the cosine similarity between the embeddings of new
+              and reference object.
+            </p>
+            <img style="display: block; width: 60%; margin: 0 auto" src="static/images/association_matrix_vlm.png" />
+
 
           </div>
         </div>
@@ -274,43 +296,81 @@
                 <!-- Interpolating. -->
                 <h3 class="title is-4">Object Association in Long-Term Dynamic Environments</h3>
                 <div class="content has-text-justified">
-                  <img src="static/images/results.png" />
+
+                  <img style="display: block; width: 50%; margin: 0 auto" src="static/images/long_term_dynamic.png" />
                   <p>
-                    We collect exploration trials in 10 scenes, each with one reference trial and a new trial of
+                    We collect exploration trials in 10 scenes (as is shown above), each with one reference trial and a
+                    new trial of
                     exploration data. Then we need to find the mapping from the object ID in the new trial to the object
                     ID in the reference trial. We compare our method with heuristic methods based on foundation models
-                    that can generate dense visual-language features. The results show that our method achieves overall
-                    better association success rate.
+                    that can generate dense visual-language features. The results show that our ensemble method achieves
+                    an almost-perfect 95% success rate, with a notable margin over the foundation models. The results
+                    are shown in the table below.
                   </p>
+                  <img src="static/images/results.png" />
                 </div>
                 <div class="content has-text-justified">
-                  <img src="static/images/per_clas_association.png" />
                   <p>
                     We further show the qualitative results of object association in long-term dynamic environments.
                     When we first look at objects that are commonly occurring in various datasets like "Garbage Can",
-                    "Bowl", "Stool", "Bed", "Desk", and "Laptop", fine-tuned VLMs like OVSeg and LSeg perform
-                    well in the association tasks, sometimes even better than BYE. The major reason behind this might be
+                    "Bowl", "Stool", "Bed", "Desk", and "Laptop", VLMs like CLIP, OVSeg and LSeg perform
+                    well in the association tasks. The major reason behind this might be
                     that the pre-training and fine-tuning processes allow the model to learn reliable and robust
                     features for those categories. When there are no duplicate objects in the scene (like "Bed" and
                     "Desk"), the semantic features are representative for those objects and therefore help with
                     association. However, when we look at less common categories like "Cell Phone", "Credit Card",
-                    "Key Chain", and "Pan", foundation models struggle to correctly associate them due to their
-                    long-tailed characteristics in the dataset. The benefits of BYE emerge under these circumstances.
-                    Since BYE is trained only on the reference exploration data, which is not restricted by the data
-                    distribution that pre-trained models are accustomed to. BYE only focuses on the geometric and
-                    visual characteristics of the objects in the scenes and learns to differentiate them in the process
-                    of contrastive learning.
+                    "Key Chain", and "Pan", fine-tuned foundation models struggle to correctly associate them due to
+                    their long-tailed characteristics in the dataset. When we look at small objects such as "Pen", even
+                    CLIP fails to associate them correctly. However, the ensembling method integrates the scene-specific
+                    expertise with VLM, making these detailed knowledge contribute to the performance. The benefits of
+                    BYE emerge under these circumstances since BYE is trained on the reference exploration data,
+                    which is not restricted by the data distribution that pre-trained models are accustomed to. BYE only
+                    focuses on the geometric and visual characteristics of the objects in the scenes and learns to
+                    differentiate them in the process of contrastive learning.
                   </p>
+                  <img src="static/images/qualitative_results_simulator.png" />
                 </div>
-                <h3 class="title is-4">Runtime Analysis</h3>
+                <h3 class="title is-4">Real World Results</h3>
+
                 <div class="content has-text-justified">
-                  <img src="static/images/runtime.png" />
+                  <img style="display: inline-block; width: 49%; margin: 0 auto" src="static/images/chair00.gif" />
+                  <img style="display: inline-block; width: 49%; margin: 0 auto" src="static/images/chair01.gif" />
                   <p>
-                    BYE can run at 50Hz on NVIDIA A40 GPU with a single CPU thread. The per-scene inference speed is
-                    shown in the image above.
+                    We further evaluate our method on real-world data collected in a dynamic environment. As is shown
+                    above, the left sequence is reference sequence and the right one is the new observation after object
+                    relocations happened.
                   </p>
-                </div>
-                <!-- <div class="columns is-vcentered interpolation-panel">
+                  <img style="display: block; width: 80%; margin: 0 auto" src="static/images/real_world_results.png" />
+                  <p>
+                    The quantitative results show the robustness and effectiveness of our ensembling method with a 100%
+                    success rate in object association tasks.
+                  </p>
+                  <img src="static/images/qualitative_results_real_world_tab_1.png" />
+                  <p>
+                    In the tabletop scene, objects are moved around randomly and the robot needs to associate them
+                    across different trials.
+                    Both our method and CLIP works perfectly in this scenario.
+                  </p>
+                  <img src="static/images/qualitative_results_real_world_furn_2.png" />
+                  <p>
+                    In the furniture scene, we randomly put eight chairs across three different rooms (Furn 1, Furn 2,
+                    Furn 4) and test the association methods. This scenario is challenging since it requires the model
+                    to perform association for the semantically similar objects. Some chairs are identical except for
+                    different objects placed on them, which poses a challenge for VLMs which usually struggle with
+                    differentiating small differences among the same type of objects. In this case, our method still
+                    robustly achieve a 100% association success rate, while other VLMs face different degrees of
+                    failures.
+                  </p>
+
+                  <h3 class="title is-4">Runtime Analysis</h3>
+                  <div class="content has-text-justified">
+                    <img style="display: block; width: 80%; margin: 0 auto" src="static/images/runtime.png" />
+                    <p>
+                      BYE can run efficiently on a RTX 3060 Ti GPU with frequency of 88 samples per second when a batch
+                      size of 32 is used, making the method compatible and affordable with real-time applications.
+                    </p>
+                  </div>
+                  <!-- <div class="columns is-vcentered interpolation-panel">
                   <p>Sequence 1</p>
                   <div class="column  has-text-centered">
                     <video autoplay controls muted loop playsinline height="100%">
@@ -344,11 +404,11 @@
                 </div> -->
 
 
-                <br />
-                <!--/ Interpolating. -->
+                  <br />
+                  <!--/ Interpolating. -->
 
-                <!-- Re-rendering. -->
-                <!-- <h3 class="title is-4">Multi-Embodiment Navigation</h3>
+                  <!-- Re-rendering. -->
+                  <!-- <h3 class="title is-4">Multi-Embodiment Navigation</h3>
                 <div class="content has-text-justified">
                   <p>
                     A VLMap can be shared among different robots and enables generation of obstacle maps for different
@@ -410,7 +470,7 @@
                   </div>
                 </div> -->
 
-                <!-- <div class="content has-text-centered">
+                  <!-- <div class="content has-text-centered">
           <video id="replay-video"
                  controls
                  muted
@@ -421,15 +481,15 @@
                     type="video/mp4">
           </video>
         </div> -->
-                <!--/ Re-rendering. -->
+                  <!--/ Re-rendering. -->
 
+                </div>
               </div>
-            </div>
-            <!--/ Animation. -->
+              <!--/ Animation. -->
 
 
-            <!-- Concurrent Work. -->
-            <!-- <div class="columns is-centered">
+              <!-- Concurrent Work. -->
+              <!-- <div class="columns is-centered">
       <div class="column is-full-width">
         <h2 class="title is-3">Related Links</h2>
 
@@ -453,9 +513,9 @@
         </div>
       </div>
     </div> -->
-            <!--/ Concurrent Work. -->
+              <!--/ Concurrent Work. -->
 
-          </div>
+            </div>
       </section>
 
 
@@ -481,6 +541,12 @@
               <a href="http://www2.informatik.uni-freiburg.de/~huang/"><img style="max-width: 450px; max-height: 200px"
                   src="static/images/huang.jpg" alt="Chenguang Huang" /></a>
               <h3><a href="http://www2.informatik.uni-freiburg.de/~huang/">Chenguang Huang</a></h3>
+            </div>
+
+            <div class="column has-text-centered profile">
+              <a href="http://www2.informatik.uni-freiburg.de/~yan/"><img style="max-width: 450px; max-height: 200px"
+                  src="static/images/yan.jpg" alt="Shengchao Yan" /></a>
+              <h3><a href="http://www2.informatik.uni-freiburg.de/~yan/">Shengchao Yan</a></h3>
             </div>
 
             <div class="column has-text-centered profile">
